@@ -4,7 +4,7 @@ const app = express();
 
 const { engine } = require ('express-handlebars');
 
-const port = 505;
+const port = 5005;
 
 app.use(express.static('public'));
 
@@ -30,6 +30,10 @@ app.get('/',(req,res)=>{
 })
 app.get('/addHostel',(req,res)=>{
     res.render('addHostel',{layout:'hostel'});
+})
+
+app.get('/addedHostel',(req,res)=>{
+    res.render('addedHostel',{layout:'addedHostels'});
 })
 
 app.all('*',(req,res)=>{
