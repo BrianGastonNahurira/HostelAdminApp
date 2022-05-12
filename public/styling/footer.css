@@ -56,8 +56,16 @@
   }
   .footer-signin{
     padding: 10px;
-    display: flex;
+    display: grid;
     gap: 2px;
+  }
+  .footer-signin input{
+    height: 3em;
+  } 
+  .input-group-prepend button{
+    padding: 5px;
+    margin-left: 20px;
+    margin-top: 20px;
   }
   .footer-brains p{
     padding: 10px;
@@ -70,7 +78,10 @@
   }
   .icons-brands{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+  }
+  .icons-brands a{
+    padding: 10px;
   }
    .copy-right ul{
      display: flex;

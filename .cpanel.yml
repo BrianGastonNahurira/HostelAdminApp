@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/campusgf/hostel.campusweekly.info/admin
+    - /bin/cp * $DEPLOYPATH

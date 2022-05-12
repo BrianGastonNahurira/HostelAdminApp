@@ -34,6 +34,10 @@ app.get("/addHostel", (req, res) => {
   res.render("addHostel", { layout: "hostel" });
 });
 
+app.get("/addedHostel", (req, res) => {
+  res.render("addedHostel", { layout: "addedHostels" });
+});
+
 app.all("*", (req, res) => {
   res.status(404).send("oooppss!!!!  There is nothing here");
 });
