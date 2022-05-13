@@ -3,8 +3,9 @@ const res = require("express/lib/response");
 const app = express();
 
 const { engine } = require("express-handlebars");
+const { json } = require("express/lib/response");
 
-const port = process.env.PORT || 5005;
+const port = process.env.PORT || 5002;
 
 app.use(express.static("public"));
 

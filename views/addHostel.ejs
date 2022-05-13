@@ -6,9 +6,12 @@
     <div class="forms">
       <form action="" class="form1" id="form_1">
         <label for="lname">Hostel name </label>
-        <input type="text" class="name" id="lname" name="lname" /><br /><br />
-      </form>
-      <form action="" class="form1">
+        <input type="text" 
+        class="name"
+         id="lname"
+          name="lname"
+           /><br /><br />
+
         <label for="lname">Type of A room </label>
         <input
           type="text"
@@ -17,24 +20,35 @@
           id="lname"
           name="lname"
         /><br /><br />
-      </form>
-      <form action="" class="form1">
+
         <label for="lname">Rooms available </label>
-        <input type="text" class="name" id="lname" name="lname" /><br /><br />
-      </form>
-      <form action="" class="form1">
+        <input type="text"
+         class="name"
+         id="lname" 
+         name="lname"
+          /><br /><br />
+
         <label for="lname">Hostel fee </label>
-        <input type="text" class="name" id="lname" name="lname" /><br /><br />
-      </form>
-      <form action="" class="form1">
+        <input type="text" 
+        class="name" 
+        id="lname" 
+        name="lname" 
+        /><br /><br />
+
         <label for="lname">Account numbers </label>
-        <input type="text" class="name" id="lname" name="lname" /><br /><br />
-      </form>
-      <form action="" class="form1">
+        <input type="text" 
+        class="name" 
+        id="lname" 
+        name="lname" 
+        /><br /><br />
+
         <label for="lname">Telphone numbers </label>
-        <input type="text" class="name" id="lname" name="lname" /><br /><br />
-      </form>
-      <form action="" class="form1">
+        <input type="text" 
+        class="name" 
+        id="lname" 
+        name="lname" 
+        /><br /><br />
+
         <label for="lname">distance from the university </label>
         <input
           type="text"
@@ -43,51 +57,61 @@
           id="lname"
           name="lname"
         /><br /><br />
-      </form>
-      <form action="" class="form1">
-        <label for="lname">Description about the hostel </label>
-        <input type="text" class="name" id="lname" name="lname" /><br /><br />
-      </form>
-      <form action="" class="form1">
-        <label for="lname">Rules and regulations </label>
-        <input type="text" class="name" id="lname" name="lname" /><br /><br />
-      </form>
-    </div>
 
-    <div class="forms1">
-      <div class="container-cont">
-        <input
-          type="file"
-          id="file-input"
-          accept="image/png, image/jpeg, image/jpg"
-          name=""
-          multiple
-        />
-        <label for="file-input">
-          <i class="fa-solid fa-upload"></i> &nbsp; Choose a photo
-        </label>
-        <p id="num-of-files">No Files Chosen</p>
+        <label for="lname">Description about the hostel </label>
+        <input type="text"
+        class="name" 
+        id="lname" 
+        name="lname" 
+        /><br /><br />
+
+        <label for="lname">Rules and regulations </label>
+        <input type="text" 
+        class="name" 
+        id="lname" name="lname" 
+        /><br /><br />
+        
+        <div class="container-cont">
+          <input
+            type="file"
+            id="file-input"
+            accept="image/png, image/jpeg, image/jpg"
+            name=""
+            multiple
+          />
+          
+          <label for="file-input">
+            <i class="fa-solid fa-upload"></i> &nbsp; Choose a photo
+          </label>
+          <p id="num-of-files">No Files Chosen</p>
+        </div>
 
         <div id="images"></div>
-      </div>
-      <form action="">
-        <input class="submitButon" type="submit" value="Submit" />
+        <input class="submitButon" 
+        type="submit" 
+        value="Submit" />
       </form>
     </div>
-    <script>
+
+  </div>
+  <script>
       document
         .getElementById("form_1")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
           console.log("got");
-          var api = await fetch("/hostel/new", {
+          var api = await fetch("http://localhost:/hostel/new", {
             method: "POST",
+            //aded during testing-----from docs
+            headers: {
+              "Content-Type": "text/plain"
+            },
             body: JSON.stringify({ nam: "gas" }),
           });
           console.log(api);
         });
-    </script>
-  </div>
+  </script>
+</div>
 
   {{>footer}}
 </div>
