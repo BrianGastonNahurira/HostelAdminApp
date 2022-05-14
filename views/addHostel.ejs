@@ -100,13 +100,25 @@
         .addEventListener("submit", async (e) => {
           e.preventDefault();
           console.log("got");
-          var api = await fetch("http://localhost:/hostel/new", {
+
+          // added form_data to process 
+          let form_data = new FormData(getElementById("form_1")); //form data to collect the data 
+          
+          let form_contents = {};
+          form_data.forEach((v,i)=>{
+            form_contents[i] = v;
+          })
+
+
+
+          // var api = await fetch("http://localhost:5001/hostel/new", {   i added port number
+          var api = await fetch("http://localhost:5001/hostel/new", {
             method: "POST",
             //aded during testing-----from docs
             headers: {
               "Content-Type": "text/plain"
             },
-            body: JSON.stringify({ nam: "gas" }),
+            body: JSON.stringify(form_contents),//send form contents to api
           });
           console.log(api);
         });
