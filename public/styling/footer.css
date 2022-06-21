@@ -1,3 +1,8 @@
+html, body {
+  margin: auto !important;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
 .footer{
     background: rgb(190, 222, 235);
     color: #000;
@@ -101,4 +106,13 @@
   }
   .copy-righ{
     margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 380px){
+    .footer-container{
+      display: none;
+    }
+    .footer{
+      width: 100%;
+    }
   }

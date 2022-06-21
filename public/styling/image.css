@@ -2,6 +2,11 @@
     width: 75%;
     margin: auto;
 } */
+html, body {
+    margin: auto !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+  }
 .container-cont{
     background-color: white;
     width: 60px;
@@ -61,3 +66,28 @@ img{
     width: 100px;
     padding: 10px;
 }
+@media screen and (max-width: 380px){
+    .container-cont{
+        min-width: fit-content;
+        width: 80%;
+        padding: 10px;
+        margin: 10px;
+    }
+    #images{
+        width: fit-content;
+    }
+    #submit-btn{
+        margin-left: 25px;
+        /* padding: 10px; */
+    }
+    .navigation.active{
+        width: 50px;
+    
+    }
+    .main.active{
+        /* width: calc(100%-60px); */
+        width: auto;
+        left: 50px;
+    }
+}
+

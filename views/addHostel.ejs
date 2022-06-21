@@ -5,70 +5,71 @@
   <div class="container">
     <div class="forms">
       <form action="" class="form1" id="form_1">
-        <label for="lname">Hostel name </label>
+        <label for="lname"><p>Hostel name </p></label>
         <input type="text" 
         class="name"
          id="lname"
-          name="lname"
+          name="hostel_name"
            /><br /><br />
 
-        <label for="lname">Type of A room </label>
+        <label for="lname"><p>Type of A room </p></label>
         <input
           type="text"
           class="name"
           placeholder="single/Double"
           id="lname"
-          name="lname"
+          name="room_type"
         /><br /><br />
 
-        <label for="lname">Rooms available </label>
+        <label for="lname"><p>Rooms available </p></label>
         <input type="text"
          class="name"
          id="lname" 
-         name="lname"
+         name="available_rooms"
           /><br /><br />
 
-        <label for="lname">Hostel fee </label>
+        <label for="lname"><p>Hostel fee </p></label>
         <input type="text" 
         class="name" 
         id="lname" 
-        name="lname" 
+        name="hostel_fee" 
         /><br /><br />
 
-        <label for="lname">Account numbers </label>
+        <label for="lname"><p>Account numbers </p></label>
         <input type="text" 
         class="name" 
         id="lname" 
-        name="lname" 
+        name="hostel_account_no" 
         /><br /><br />
 
-        <label for="lname">Telphone numbers </label>
+        <label for="lname"><p>Telphone numbers </p></label>
         <input type="text" 
         class="name" 
         id="lname" 
-        name="lname" 
+        name="telephone_number" 
         /><br /><br />
 
-        <label for="lname">distance from the university </label>
+        <label for="lname"><p>distance from the university </p></label>
         <input
           type="text"
           class="name"
           placeholder="in km"
           id="lname"
-          name="lname"
+          name="hostel_distance"
         /><br /><br />
 
-        <label for="lname">Description about the hostel </label>
+        <label for="lname"><p>Description about the hostel </p></label>
         <input type="text"
         class="name" 
         id="lname" 
-        name="lname" 
+        name="hostel_description" 
         /><br /><br />
 
-        <label for="lname">Rules and regulations </label>
+        <label for="lname"><p>Rules and regulations </p></label>
         <input type="text" 
         class="name" 
-        id="lname" name="lname" 
+        id="lname" 
+        name="hostel_rules" 
         /><br /><br />
         
         <div class="container-cont">
@@ -89,41 +90,46 @@
         <div id="images"></div>
         <input class="submitButon" 
         type="submit" 
+        id="submit-btn"
         value="Submit" />
       </form>
     </div>
 
   </div>
-  <script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
       document
         .getElementById("form_1")
         .addEventListener("submit", async (e) => {
-          e.preventDefault();
+          e.preventDefault(); 
           console.log("got");
 
-          // added form_data to process 
-          let form_data = new FormData(getElementById("form_1")); //form data to collect the data 
+          axios({
+            method: 'get',
+            URL:('http://localhost:5001/hostel/new'),
+          }).then(res => console.log(res)).catch(err => console.error(err))
+          // // added form_data to process 
+          // let form_data = new FormData(getElementById("form_1")); //form data to collect the data 
           
-          let form_contents = {};
-          form_data.forEach((v,i)=>{
-            form_contents[i] = v;
-          })
+          // let form_contents = {};
+          // form_data.forEach((v,i)=>{
+          //   form_contents[i] = v;
+          // })
 
 
 
-          // var api = await fetch("http://localhost:5001/hostel/new", {   i added port number
-          var api = await fetch("http://localhost:5001/hostel/new", {
-            method: "POST",
-            //aded during testing-----from docs
-            headers: {
-              "Content-Type": "text/plain"
-            },
-            body: JSON.stringify(form_contents),//send form contents to api
-          });
-          console.log(api);
+          // // var api = await fetch("http://localhost:5001/hostel/new", {   i added port number
+          // var api = await fetch("http://localhost:5001/hostel/new", {
+          //   method: "POST",
+          //   //aded during testing-----from docs
+          //   headers: {
+          //     "Content-Type": "text/plain"
+          //   },
+          //   body: JSON.stringify(form_contents),//send form contents to api
+          // });
+          // console.log(api);
         });
   </script>
 </div>
 
-  {{>footer}}
+  <!-- {{>footer}} -->
 </div>

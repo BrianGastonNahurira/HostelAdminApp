@@ -1,10 +1,26 @@
+html, body {
+    margin: auto !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+  }
+  .forms{
+      /* width: 80%;
+      margin: auto; */
+      margin-left: 150px;
+  }
 .forms label,
 .forms1 label{
     display:inline-block;
     width:200px;
     margin-right:30px;
 }
-
+.name{
+    width: 20rem;
+    height: 2rem;
+}
+.forms1{
+    border: 1px solid black;
+}
 .forms1 .name{
     width: 250px;
     height: 80px;
@@ -44,5 +60,38 @@ input[type="submit" i] {
     margin-left: 180px;
     height: 40px;
     border-radius: 15%;
+
+}
+
+@media screen and (max-width: 380px){
+    .forms label{
+        margin-left: 0px;
+        margin-right: 0px;
+        font-size: 10pt;
+        width: 150px;
+    }
+    .forms input{
+        height: 2.5rem;
+        width: 10rem;
+    }
+    .container{
+        margin-top: 15px;
+        left: 0px;
+    }
+    .forms{
+        border: 1px solid black;
+        padding: 10px;
+        margin-left: 0px;
+        width: fit-content;
+    }
+    .navigation.active{
+        width: 50px;
+    
+    }
+    .main.active{
+        /* width: calc(100%-60px); */
+        width: auto;
+        left: 50px;
+    }
 
 }
