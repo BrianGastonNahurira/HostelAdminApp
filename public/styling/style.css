@@ -183,6 +183,7 @@ body{
     left: 7px;
     font-size: 1.2em;
 }
+
 .description{
     color: var(--blue);
     padding: 10px;
@@ -416,11 +417,29 @@ body{
    .description h2{
        font-size: 10pt;
    }
-   .search{
+   /* .search{
        width: 160px;
        height: 3pt;
        margin-top: 2px;
-   }
+   } */
+   .search label input{
+    width: 150px;
+    height: 20px;
+    border-radius: 40px;
+    font-size: 13px;
+    padding: 5px 20px;
+    padding-left: 50px;
+    outline: none;
+    margin-left: 10px;
+    margin-top: 4px;
+    border: 1px solid var(--black2);
+}
+.search-icon{
+    margin-left: 13px;
+    margin-top: 3px;
+    height: 15px;
+    /* padding: 10px; */
+}
   .toggle-icon{
        width: 60%;
    }
